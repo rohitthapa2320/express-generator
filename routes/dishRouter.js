@@ -72,7 +72,7 @@ dishRouter.route('/:dishId')
         .catch((err) => next(err));
     })
     .delete((req, res, next) => {
-        Dishes.findByIdAndRemove(req.params.id)
+        Dishes.findByIdAndRemove(req.params.dishId)
         .then((resp) => {
             res.statusCode= 200;
             res.setHeader('Content-Type', 'application/json');
@@ -121,7 +121,7 @@ dishRouter.route('/:dishId')
     })
     .put((req, res, next) => {
         res.statusCode=403;
-        res.end('PUT operation not supported on /dishes' + req.params.dishId +'/comments');
+        res.end('PUT operation not supported on /dishes/' + req.params.dishId +'/comments');
     })
     .delete((req, res, next) => {
         Dishes.findById(req.params.dishId)

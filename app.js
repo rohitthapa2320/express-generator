@@ -11,6 +11,8 @@ var dishRouter= require('./routes/dishRouter');
 var promoRouter= require('./routes/promoRouter');
 var leaderRouter= require('./routes/leaderRouter');
 const Dishes= require('./models/dishes');
+const Promotions=require('./models/promotions');
+const Leaders=require('./models/leaders');
 
 var app = express();
 
