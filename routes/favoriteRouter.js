@@ -32,7 +32,7 @@ favoriteRouter.route('/')
                 err.status = 404;
                 return next(err);
             }
-            
+
         }, (err) => next(err))
         .catch((err) => next(err));
 })
@@ -64,7 +64,7 @@ favoriteRouter.route('/')
                         console.log("Favorites Created");
                     }, (err) => next(err))
                     .catch((err) => next(err));
-                
+
             })
             .catch((err) => next(err));
 })
@@ -89,7 +89,7 @@ favoriteRouter.route('/')
                         res.setHeader("Content-Type", "application/json");
                         res.json(result);
                     }, (err) => next(err));
-                
+
             } else {
                 var err = new Error('You do not have any favorites');
                 err.status = 404;
@@ -142,7 +142,7 @@ favoriteRouter.route('/:dishId')
                         return d_id._id.toString() === req.params.dishId.toString();
                 }))
                     user.dishes.push(req.params.dishId);
-                
+
                 user.save()
                     .then((userFavs) => {
                         res.statusCode = 201;
@@ -176,7 +176,7 @@ favoriteRouter.route('/:dishId')
                         res.setHeader("Content-Type", "application/json");
                         res.json(result);
                     }, (err) => next(err));
-                
+
             } else {
                 var err = new Error('You do not have any favorites');
                 err.status = 404;
@@ -186,4 +186,4 @@ favoriteRouter.route('/:dishId')
         .catch((err) => next(err));
 });
 
-module.exports = favoriteRouter;
+module.exports = favoriteRouter; 
